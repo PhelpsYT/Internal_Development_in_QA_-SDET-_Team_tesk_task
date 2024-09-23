@@ -29,14 +29,15 @@ python folder_sync.py -sf source -rf replica  -lf logs -i 5
 ```
 
 The log file will appear as follows while the program is running:
-![resim]()
+![image](https://github.com/user-attachments/assets/c5a9327c-d113-428b-b95b-bc6bdfa3e280)
+
 
 
 ## Notes
 
 - The primary goal was to maintain clarity in the code while maximizing its efficiency. The development process took approximately 2 to 4 hours.
 - If the source, replica, or log folders do not exist, the program will create them. It also supports full paths, allowing users to specify absolute paths in the initial configuration.
-- The log file will automatically have a .log extension for proper log storage. It will contain all operations performed by the program, along with their execution timestamps. Additionally, all operations will be displayed in the console as specified in the requirements.
+- The log file will automatically have a .log extension for proper log storage. It will contain all operations performed by the program, along with their execution timestamps. Additionally, all operations will be displayed in the console as specified in the requirements. If no changes occur and the files remain unchanged, no information will be added to the logs or the console.
 - The script continuously monitors the source folder and synchronizes it with the replica folder based on the user-specified time interval.
 - Files in the replica will be updated if they exist but have differing hash values, created if they are not found in the replica folder, or deleted if they are present in the replica but absent from the source folder.
 - The system is designed using hash tables for efficient file synchronization. In certain scenarios, implementing hash trees, such as Merkle trees, could offer additional efficiency. (To complex for a simple system)
